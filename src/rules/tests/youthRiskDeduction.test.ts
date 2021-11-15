@@ -1,4 +1,8 @@
-import { ClientInformation, RiskScore } from '../../model';
+import {
+  ClientInformation,
+  HouseOwnershipStatus,
+  RiskScore,
+} from '../../model';
 import youthRiskDeduction from '../youthRiskDeduction';
 
 const INITIAL_RISK_SCORE: RiskScore = {
@@ -11,13 +15,13 @@ const INITIAL_RISK_SCORE: RiskScore = {
 const CLIENT_UNDER_30: ClientInformation = {
   age: 26,
   dependents: 0,
-  house: { ownership_status: 'owned' },
+  house: { ownership_status: HouseOwnershipStatus.OWNED },
   income: 2000,
   marital_status: 'married',
   risk_questions: [0, 0, 0],
   vehicle: { year: 2020 },
 };
-describe(' The youthRiskDeduction rule', () => {
+describe('The youthRiskDeduction rule', () => {
   it('Should deduct 2 risk points from all lines of insurance for a client that is under 30 years old', () => {
     const expectedRiskScore: RiskScore = {
       auto: -2,

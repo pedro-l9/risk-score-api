@@ -1,4 +1,8 @@
-import { ClientInformation, RiskScore } from '../../model';
+import {
+  ClientInformation,
+  HouseOwnershipStatus,
+  RiskScore,
+} from '../../model';
 import noAssetsDeclared from '../noAssetsDeclared';
 
 const INITIAL_RISK_SCORE: RiskScore = {
@@ -11,13 +15,13 @@ const INITIAL_RISK_SCORE: RiskScore = {
 const DUMMY_CLIENT_INFORMATION: ClientInformation = {
   age: 26,
   dependents: 0,
-  house: { ownership_status: 'owned' },
+  house: { ownership_status: HouseOwnershipStatus.OWNED },
   income: 2000,
   marital_status: 'married',
   risk_questions: [0, 0, 0],
   vehicle: { year: 2020 },
 };
-describe(' The noAssetsDeclared rule', () => {
+describe('The noAssetsDeclared rule', () => {
   it("Should return an auto risk score of undefined for a client that doesn't have a car", () => {
     const { vehicle: _, ...clientWithoutCar } = DUMMY_CLIENT_INFORMATION;
 

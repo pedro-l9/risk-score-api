@@ -1,4 +1,8 @@
-import { ClientInformation, RiskScore } from '../../model';
+import {
+  ClientInformation,
+  HouseOwnershipStatus,
+  RiskScore,
+} from '../../model';
 import aboveMaxAge from '../aboveMaxAge';
 
 const INITIAL_RISK_SCORE: RiskScore = {
@@ -11,13 +15,13 @@ const INITIAL_RISK_SCORE: RiskScore = {
 const DUMMY_CLIENT_INFORMATION: ClientInformation = {
   age: 26,
   dependents: 0,
-  house: { ownership_status: 'owned' },
+  house: { ownership_status: HouseOwnershipStatus.OWNED },
   income: 2000,
   marital_status: 'married',
   risk_questions: [0, 0, 0],
   vehicle: { year: 2020 },
 };
-describe(' The aboveMaxAge rule', () => {
+describe('The aboveMaxAge rule', () => {
   it('Should return undefined disability and life risk scores for a client that is above max age', () => {
     const clientAboveMaxAge = { ...DUMMY_CLIENT_INFORMATION, age: 61 };
 

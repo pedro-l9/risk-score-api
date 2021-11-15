@@ -1,9 +1,13 @@
 type BinaryNumber = 0 | 1;
 
+export enum HouseOwnershipStatus {
+  OWNED = 'owned',
+  MORTGAGED = 'mortgaged',
+}
 export interface ClientInformation {
   age: number;
   dependents: number;
-  house?: { ownership_status: 'owned' | 'mortgaged' };
+  house?: { ownership_status: HouseOwnershipStatus };
   income: number;
   marital_status: 'married' | 'single';
   risk_questions: [BinaryNumber, BinaryNumber, BinaryNumber];

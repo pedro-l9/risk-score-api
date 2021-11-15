@@ -1,4 +1,8 @@
-import { ClientInformation, RiskScore } from '../../model';
+import {
+  ClientInformation,
+  HouseOwnershipStatus,
+  RiskScore,
+} from '../../model';
 import highIncomeRiskDeduction from '../highIncomeRiskDeduction';
 
 const INITIAL_RISK_SCORE: RiskScore = {
@@ -11,7 +15,7 @@ const INITIAL_RISK_SCORE: RiskScore = {
 const HIGH_INCOME_CLIENT: ClientInformation = {
   age: 26,
   dependents: 0,
-  house: { ownership_status: 'owned' },
+  house: { ownership_status: HouseOwnershipStatus.OWNED },
   income: 201000,
   marital_status: 'married',
   risk_questions: [0, 0, 0],
