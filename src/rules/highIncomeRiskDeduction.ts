@@ -1,4 +1,4 @@
-import { RiskScore, ClientInformation } from '../model';
+import { ClientInformation,RiskScore } from '../model';
 
 const HIGH_INCOME_THRESHOLD = 200000;
 

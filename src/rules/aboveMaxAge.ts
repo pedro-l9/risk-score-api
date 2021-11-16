@@ -1,4 +1,4 @@
-import { RiskScore, ClientInformation } from '../model';
+import { ClientInformation,RiskScore } from '../model';
 
 const MAX_AGE = 60;
 

@@ -1,4 +1,4 @@
-import { RiskScore, ClientInformation, HouseOwnershipStatus } from '../model';
+import { ClientInformation, HouseOwnershipStatus,RiskScore } from '../model';
 
 export default function mortgadgedHomeRisk(
   { house }: ClientInformation,

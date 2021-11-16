@@ -1,4 +1,4 @@
-import { RiskScore, ClientInformation, MaritalStatus } from '../model';
+import { ClientInformation, RiskScore } from '../model';
 
 const NEW_VEHICLE_AGE_THRESHOLD = 5;
 

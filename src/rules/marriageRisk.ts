@@ -1,4 +1,4 @@
-import { RiskScore, ClientInformation, MaritalStatus } from '../model';
+import { ClientInformation, MaritalStatus,RiskScore } from '../model';
 
 export default function marriageRisk(
   { marital_status }: ClientInformation,

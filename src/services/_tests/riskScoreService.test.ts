@@ -1,14 +1,12 @@
 import {
   ClientInformation,
-  HouseOwnershipStatus,
   MaritalStatus,
   RiskLevel,
   RiskProfile,
-} from '../model';
+} from '../../model';
+import { getClientRiskProfile } from '../riskScoreService';
 
-import { getClientRiskProfile } from '../RiskScoreEngine';
-
-describe('The RiskScoreEngine', () => {
+describe('The riskScoreService', () => {
   describe('The getClientRiskProfile function', () => {
     it("Should apply all the riskRules and return the client's risk profile given the client's information", () => {
       const DUMMY_CLIENT_INFORMATION: ClientInformation = {

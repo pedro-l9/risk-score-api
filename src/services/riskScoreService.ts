@@ -4,8 +4,8 @@ import {
   RiskProfile,
   RiskRule,
   RiskScore,
-} from './model';
-import rulesList from './rules';
+} from '../model';
+import rulesList from '../rules';
 
 const INITIAL_RISK_SCORE: RiskScore = {
   auto: 0,

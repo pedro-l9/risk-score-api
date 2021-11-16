@@ -1,4 +1,4 @@
-import { RiskScore, ClientInformation } from '../model';
+import { ClientInformation,RiskScore } from '../model';
 
 export default function dependentRisk(
   { dependents }: ClientInformation,

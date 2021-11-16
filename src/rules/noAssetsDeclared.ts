@@ -1,4 +1,4 @@
-import { RiskScore, ClientInformation } from '../model';
+import { ClientInformation,RiskScore } from '../model';
 
 export default function noAssetsDeclared(
   { income, house, vehicle }: ClientInformation,
