@@ -4,12 +4,17 @@ export enum HouseOwnershipStatus {
   OWNED = 'owned',
   MORTGAGED = 'mortgaged',
 }
+
+export enum MaritalStatus {
+  MARRIED = 'married',
+  SINGLE = 'single',
+}
 export interface ClientInformation {
   age: number;
   dependents: number;
   house?: { ownership_status: HouseOwnershipStatus };
   income: number;
-  marital_status: 'married' | 'single';
+  marital_status: MaritalStatus;
   risk_questions: [BinaryNumber, BinaryNumber, BinaryNumber];
   vehicle?: { year: number };
 }

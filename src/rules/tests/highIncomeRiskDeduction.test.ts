@@ -1,6 +1,7 @@
 import {
   ClientInformation,
   HouseOwnershipStatus,
+  MaritalStatus,
   RiskScore,
 } from '../../model';
 import highIncomeRiskDeduction from '../highIncomeRiskDeduction';
@@ -17,7 +18,7 @@ const HIGH_INCOME_CLIENT: ClientInformation = {
   dependents: 0,
   house: { ownership_status: HouseOwnershipStatus.OWNED },
   income: 201000,
-  marital_status: 'married',
+  marital_status: MaritalStatus.MARRIED,
   risk_questions: [0, 0, 0],
   vehicle: { year: 2020 },
 };

@@ -1,6 +1,7 @@
 import {
   ClientInformation,
   HouseOwnershipStatus,
+  MaritalStatus,
   RiskScore,
 } from '../../model';
 import noAssetsDeclared from '../noAssetsDeclared';
@@ -17,7 +18,7 @@ const DUMMY_CLIENT_INFORMATION: ClientInformation = {
   dependents: 0,
   house: { ownership_status: HouseOwnershipStatus.OWNED },
   income: 2000,
-  marital_status: 'married',
+  marital_status: MaritalStatus.MARRIED,
   risk_questions: [0, 0, 0],
   vehicle: { year: 2020 },
 };
