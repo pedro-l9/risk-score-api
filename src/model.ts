@@ -33,9 +33,14 @@ export interface RiskScore {
   life?: number;
 }
 
-export interface RiskResult {
+export interface RiskProfile {
   auto: RiskLevel;
   disability: RiskLevel;
   home: RiskLevel;
   life: RiskLevel;
 }
+
+export type RiskRule = (
+  clientInformation: ClientInformation,
+  riskScore: RiskScore
+) => RiskScore;
