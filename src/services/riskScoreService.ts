@@ -7,20 +7,25 @@ import {
 } from '../model';
 import rulesList from '../rules';
 
-const INITIAL_RISK_SCORE: RiskScore = {
-  auto: 0,
-  disability: 0,
-  home: 0,
-  life: 0,
-};
-
 export function getClientRiskProfile(
   clientInformation: ClientInformation
 ): RiskProfile {
+  const baseRiskScore = clientInformation.risk_questions.reduce<number>(
+    (baseRiskScore, response) => baseRiskScore + response,
+    0
+  );
+
+  const initialRiskScore = {
+    auto: baseRiskScore,
+    disability: baseRiskScore,
+    home: baseRiskScore,
+    life: baseRiskScore,
+  };
+
   const { auto, disability, home, life } = rulesList.reduce<RiskScore>(
     (currentRiskScore: RiskScore, riskRule: RiskRule): RiskScore =>
       riskRule(clientInformation, currentRiskScore),
-    INITIAL_RISK_SCORE
+    initialRiskScore
   );
 
   return {

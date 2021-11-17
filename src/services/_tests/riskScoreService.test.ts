@@ -28,5 +28,26 @@ describe('The riskScoreService', () => {
 
       expect(clientRiskProfile).toEqual(expectedRiskProfile);
     });
+
+    it('Should sum the values of the risk_questions to obtain the base risk score', () => {
+      const DUMMY_CLIENT_INFORMATION: ClientInformation = {
+        age: 55,
+        dependents: 2,
+        income: 2000,
+        marital_status: MaritalStatus.MARRIED,
+        risk_questions: [1, 1, 1],
+      };
+
+      const expectedRiskProfile: RiskProfile = {
+        auto: RiskLevel.INELIGIBLE,
+        disability: RiskLevel.RESPONSIBLE,
+        home: RiskLevel.INELIGIBLE,
+        life: RiskLevel.RESPONSIBLE,
+      };
+
+      const clientRiskProfile = getClientRiskProfile(DUMMY_CLIENT_INFORMATION);
+
+      expect(clientRiskProfile).toEqual(expectedRiskProfile);
+    });
   });
 });
