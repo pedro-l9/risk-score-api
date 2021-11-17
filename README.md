@@ -1,6 +1,6 @@
 # **Risk Score API**
 
-## **Running the API with Docker:**
+## **Running the API:**
 
 **Requirements:**
 
@@ -8,7 +8,7 @@
 
 **Step 1 - Build the docker image:**
 
-Run the following command on the root of the project
+Run the following command on the root of the project to build the docker image
 
 ```console
 $ docker build . -t origin-take-home
@@ -16,7 +16,7 @@ $ docker build . -t origin-take-home
 
 **Step 2 - Start the docker container:**
 
-Replace **PORT** with the port you want the API to listen to and run the following command
+Replace **PORT** with the port you want the API to listen to and run the following command to start the docker container with the application
 
 ```console
 $ docker run -p PORT:8080 -d origin-take-home
