@@ -10,7 +10,8 @@
     "test": "jest --watchAll --coverage --runInBand",
     "test:list": "jest --verbose --silent --runInBand",
     "build": "docker build . -t origin-take-home",
-    "lint": "eslint"
+    "lint": "eslint --fix .",
+    "format": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
