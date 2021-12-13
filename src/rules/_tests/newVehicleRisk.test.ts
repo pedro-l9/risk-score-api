@@ -5,13 +5,7 @@ import {
   RiskScore,
 } from '../../model';
 import newVehicleRisk from '../newVehicleRisk';
-
-const INITIAL_RISK_SCORE: RiskScore = {
-  auto: 0,
-  disability: 0,
-  home: 0,
-  life: 0,
-};
+import { INITIAL_RISK_SCORE } from './testModels';
 
 const CLIENT_WITH_NEW_VEHICLE: ClientInformation = {
   age: 26,
@@ -25,10 +19,8 @@ const CLIENT_WITH_NEW_VEHICLE: ClientInformation = {
 describe('The newVehicleRisk rule', () => {
   it('Should add 1 risk point to the auto score when the client has a vehicle that was produced within the last 5 years', () => {
     const expectedRiskScore: RiskScore = {
+      ...INITIAL_RISK_SCORE,
       auto: 1,
-      disability: 0,
-      home: 0,
-      life: 0,
     };
 
     const ruleResult = newVehicleRisk(

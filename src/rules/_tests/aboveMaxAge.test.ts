@@ -5,13 +5,7 @@ import {
   RiskScore,
 } from '../../model';
 import aboveMaxAge from '../aboveMaxAge';
-
-const INITIAL_RISK_SCORE: RiskScore = {
-  auto: 0,
-  disability: 0,
-  home: 0,
-  life: 0,
-};
+import { INITIAL_RISK_SCORE } from './testModels';
 
 const DUMMY_CLIENT_INFORMATION: ClientInformation = {
   age: 26,
@@ -27,9 +21,8 @@ describe('The aboveMaxAge rule', () => {
     const clientAboveMaxAge = { ...DUMMY_CLIENT_INFORMATION, age: 61 };
 
     const expectedRiskScore: RiskScore = {
-      auto: 0,
+      ...INITIAL_RISK_SCORE,
       disability: undefined,
-      home: 0,
       life: undefined,
     };
 

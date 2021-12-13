@@ -87,7 +87,7 @@ describe('POST /api/risk - Get the risk profile for a client', () => {
         .expect('Content-Type', /text/)
         .expect(
           400,
-          'Bad request\n\n"house.ownership_status" must be one of [owned, mortgaged]'
+          'Bad request\n\n"house.ownership_status" must be one of [owned, mortgaged, rented]'
         );
     });
 

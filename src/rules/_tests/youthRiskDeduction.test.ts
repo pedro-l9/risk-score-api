@@ -5,13 +5,7 @@ import {
   RiskScore,
 } from '../../model';
 import youthRiskDeduction from '../youthRiskDeduction';
-
-const INITIAL_RISK_SCORE: RiskScore = {
-  auto: 0,
-  disability: 0,
-  home: 0,
-  life: 0,
-};
+import { INITIAL_RISK_SCORE } from './testModels';
 
 const CLIENT_UNDER_30: ClientInformation = {
   age: 26,
@@ -29,6 +23,7 @@ describe('The youthRiskDeduction rule', () => {
       disability: -2,
       home: -2,
       life: -2,
+      renters: -2,
     };
 
     const ruleResult = youthRiskDeduction(CLIENT_UNDER_30, INITIAL_RISK_SCORE);
@@ -44,6 +39,7 @@ describe('The youthRiskDeduction rule', () => {
       disability: -1,
       home: -1,
       life: -1,
+      renters: -1,
     };
 
     const ruleResult = youthRiskDeduction(clientWIthAge35, INITIAL_RISK_SCORE);

@@ -15,14 +15,15 @@ export function getClientRiskProfile(
     0
   );
 
-  const initialRiskScore = {
+  const initialRiskScore: RiskScore = {
     auto: baseRiskScore,
     disability: baseRiskScore,
     home: baseRiskScore,
     life: baseRiskScore,
+    renters: baseRiskScore,
   };
 
-  const { auto, disability, home, life } = rulesList.reduce<RiskScore>(
+  const { auto, disability, home, life, renters } = rulesList.reduce<RiskScore>(
     (currentRiskScore: RiskScore, riskRule: RiskRule): RiskScore =>
       riskRule(clientInformation, currentRiskScore),
     initialRiskScore
@@ -33,6 +34,7 @@ export function getClientRiskProfile(
     disability: _getRiskLevelForScore(disability),
     home: _getRiskLevelForScore(home),
     life: _getRiskLevelForScore(life),
+    renters: _getRiskLevelForScore(renters),
   };
 }
 

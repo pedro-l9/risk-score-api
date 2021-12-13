@@ -6,6 +6,7 @@ import marriageRisk from './marriageRisk';
 import mortgagedHomeRisk from './mortgagedHomeRisk';
 import newVehicleRisk from './newVehicleRisk';
 import noAssetsDeclared from './noAssetsDeclared';
+import rentedHouseRisk from './rentedHouseRisk';
 import youthRiskDeduction from './youthRiskDeduction';
 
 const rulesList: RiskRule[] = [
@@ -17,6 +18,7 @@ const rulesList: RiskRule[] = [
   newVehicleRisk,
   noAssetsDeclared,
   youthRiskDeduction,
+  rentedHouseRisk,
 ];
 
 export default rulesList;

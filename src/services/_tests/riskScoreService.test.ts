@@ -22,6 +22,7 @@ describe('The riskScoreService', () => {
         disability: RiskLevel.ECONOMIC,
         home: RiskLevel.INELIGIBLE,
         life: RiskLevel.REGULAR,
+        renters: RiskLevel.INELIGIBLE,
       };
 
       const clientRiskProfile = getClientRiskProfile(DUMMY_CLIENT_INFORMATION);
@@ -43,6 +44,7 @@ describe('The riskScoreService', () => {
         disability: RiskLevel.RESPONSIBLE,
         home: RiskLevel.INELIGIBLE,
         life: RiskLevel.RESPONSIBLE,
+        renters: RiskLevel.INELIGIBLE,
       };
 
       const clientRiskProfile = getClientRiskProfile(DUMMY_CLIENT_INFORMATION);

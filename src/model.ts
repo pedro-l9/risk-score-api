@@ -3,6 +3,7 @@ type BinaryNumber = 0 | 1;
 export enum HouseOwnershipStatus {
   OWNED = 'owned',
   MORTGAGED = 'mortgaged',
+  RENTED = 'rented',
 }
 
 export enum MaritalStatus {
@@ -31,6 +32,7 @@ export interface RiskScore {
   disability?: number;
   home?: number;
   life?: number;
+  renters?: number;
 }
 
 export interface RiskProfile {
@@ -38,6 +40,7 @@ export interface RiskProfile {
   disability: RiskLevel;
   home: RiskLevel;
   life: RiskLevel;
+  renters: RiskLevel;
 }
 
 export type RiskRule = (

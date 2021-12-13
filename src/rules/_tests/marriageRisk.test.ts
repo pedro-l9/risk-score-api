@@ -5,13 +5,7 @@ import {
   RiskScore,
 } from '../../model';
 import marriageRisk from '../marriageRisk';
-
-const INITIAL_RISK_SCORE: RiskScore = {
-  auto: 0,
-  disability: 0,
-  home: 0,
-  life: 0,
-};
+import { INITIAL_RISK_SCORE } from './testModels';
 
 const MARRIED_CLIENT: ClientInformation = {
   age: 26,
@@ -25,9 +19,8 @@ const MARRIED_CLIENT: ClientInformation = {
 describe('The marriageRisk rule', () => {
   it('Should add 1 risk point to the life score and remove 1 risk point from the disability score for a client that is married', () => {
     const expectedRiskScore: RiskScore = {
-      auto: 0,
+      ...INITIAL_RISK_SCORE,
       disability: -1,
-      home: 0,
       life: 1,
     };
 

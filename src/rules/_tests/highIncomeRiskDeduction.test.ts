@@ -5,13 +5,7 @@ import {
   RiskScore,
 } from '../../model';
 import highIncomeRiskDeduction from '../highIncomeRiskDeduction';
-
-const INITIAL_RISK_SCORE: RiskScore = {
-  auto: 0,
-  disability: 0,
-  home: 0,
-  life: 0,
-};
+import { INITIAL_RISK_SCORE } from './testModels';
 
 const HIGH_INCOME_CLIENT: ClientInformation = {
   age: 26,
@@ -29,6 +23,7 @@ describe('The highIncomeRiskDeduction rule', () => {
       disability: -1,
       home: -1,
       life: -1,
+      renters: -1,
     };
 
     const ruleResult = highIncomeRiskDeduction(
