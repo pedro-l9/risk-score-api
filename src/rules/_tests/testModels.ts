@@ -6,4 +6,5 @@ export const INITIAL_RISK_SCORE: RiskScore = {
   home: 0,
   life: 0,
   renters: 0,
+  umbrella: 0,
 };

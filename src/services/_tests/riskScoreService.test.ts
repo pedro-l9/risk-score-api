@@ -23,6 +23,7 @@ describe('The riskScoreService', () => {
         home: RiskLevel.INELIGIBLE,
         life: RiskLevel.REGULAR,
         renters: RiskLevel.INELIGIBLE,
+        umbrella: RiskLevel.ECONOMIC,
       };
 
       const clientRiskProfile = getClientRiskProfile(DUMMY_CLIENT_INFORMATION);
@@ -45,6 +46,30 @@ describe('The riskScoreService', () => {
         home: RiskLevel.INELIGIBLE,
         life: RiskLevel.RESPONSIBLE,
         renters: RiskLevel.INELIGIBLE,
+        umbrella: RiskLevel.INELIGIBLE,
+      };
+
+      const clientRiskProfile = getClientRiskProfile(DUMMY_CLIENT_INFORMATION);
+
+      expect(clientRiskProfile).toEqual(expectedRiskProfile);
+    });
+
+    it('Should make the client ineligible to the umbrella insurance line if none of the riskLevels of the profile is ECONOMIC', () => {
+      const DUMMY_CLIENT_INFORMATION: ClientInformation = {
+        age: 55,
+        dependents: 2,
+        income: 2000,
+        marital_status: MaritalStatus.MARRIED,
+        risk_questions: [1, 1, 1],
+      };
+
+      const expectedRiskProfile: RiskProfile = {
+        auto: RiskLevel.INELIGIBLE,
+        disability: RiskLevel.RESPONSIBLE,
+        home: RiskLevel.INELIGIBLE,
+        life: RiskLevel.RESPONSIBLE,
+        renters: RiskLevel.INELIGIBLE,
+        umbrella: RiskLevel.INELIGIBLE,
       };
 
       const clientRiskProfile = getClientRiskProfile(DUMMY_CLIENT_INFORMATION);

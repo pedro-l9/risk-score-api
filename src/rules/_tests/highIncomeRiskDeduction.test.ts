@@ -24,6 +24,7 @@ describe('The highIncomeRiskDeduction rule', () => {
       home: -1,
       life: -1,
       renters: -1,
+      umbrella: -1,
     };
 
     const ruleResult = highIncomeRiskDeduction(

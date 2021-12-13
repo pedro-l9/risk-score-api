@@ -2,7 +2,7 @@ import { ClientInformation, RiskScore } from '../model';
 
 export default function youthRiskDeduction(
   { age }: ClientInformation,
-  { disability, home, auto, life, renters }: RiskScore
+  { disability, home, auto, life, renters, umbrella }: RiskScore
 ): RiskScore {
   let riskDeduction = 0;
 
@@ -19,5 +19,6 @@ export default function youthRiskDeduction(
     auto: auto === undefined ? undefined : auto - riskDeduction,
     life: life === undefined ? undefined : life - riskDeduction,
     renters: renters === undefined ? undefined : renters - riskDeduction,
+    umbrella: umbrella === undefined ? undefined : umbrella - riskDeduction,
   };
 }

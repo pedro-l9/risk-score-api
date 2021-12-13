@@ -5,13 +5,7 @@ import {
   RiskScore,
 } from '../../model';
 import dependentRisk from '../dependentRisk';
-
-const INITIAL_RISK_SCORE: RiskScore = {
-  auto: 0,
-  disability: 0,
-  home: 0,
-  life: 0,
-};
+import { INITIAL_RISK_SCORE } from './testModels';
 
 const CLIENT_WITH_DEPENDENTS: ClientInformation = {
   age: 26,
@@ -25,9 +19,8 @@ const CLIENT_WITH_DEPENDENTS: ClientInformation = {
 describe('The dependentRisk rule', () => {
   it('Should add 1 risk point to the life and disability scores for a client that has dependents', () => {
     const expectedRiskScore: RiskScore = {
-      auto: 0,
+      ...INITIAL_RISK_SCORE,
       disability: 1,
-      home: 0,
       life: 1,
     };
 

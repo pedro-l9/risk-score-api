@@ -33,6 +33,7 @@ export interface RiskScore {
   home?: number;
   life?: number;
   renters?: number;
+  umbrella?: number;
 }
 
 export interface RiskProfile {
@@ -41,6 +42,7 @@ export interface RiskProfile {
   home: RiskLevel;
   life: RiskLevel;
   renters: RiskLevel;
+  umbrella: RiskLevel;
 }
 
 export type RiskRule = (

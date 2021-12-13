@@ -5,13 +5,7 @@ import {
   RiskScore,
 } from '../../model';
 import noAssetsDeclared from '../noAssetsDeclared';
-
-const INITIAL_RISK_SCORE: RiskScore = {
-  auto: 0,
-  disability: 0,
-  home: 0,
-  life: 0,
-};
+import { INITIAL_RISK_SCORE } from './testModels';
 
 const DUMMY_CLIENT_INFORMATION: ClientInformation = {
   age: 26,
@@ -27,10 +21,8 @@ describe('The noAssetsDeclared rule', () => {
     const { vehicle: _, ...clientWithoutCar } = DUMMY_CLIENT_INFORMATION;
 
     const expectedRiskScore: RiskScore = {
+      ...INITIAL_RISK_SCORE,
       auto: undefined,
-      disability: 0,
-      home: 0,
-      life: 0,
     };
 
     const ruleResult = noAssetsDeclared(clientWithoutCar, INITIAL_RISK_SCORE);
@@ -38,14 +30,13 @@ describe('The noAssetsDeclared rule', () => {
     expect(ruleResult).toEqual(expectedRiskScore);
   });
 
-  it("Should return a home risk score of undefined for a client that doesn't have a house", () => {
+  it("Should return home and renters risk score of undefined for a client that doesn't have a house", () => {
     const { house: _, ...clientWithoutHouse } = DUMMY_CLIENT_INFORMATION;
 
     const expectedRiskScore: RiskScore = {
-      auto: 0,
-      disability: 0,
+      ...INITIAL_RISK_SCORE,
       home: undefined,
-      life: 0,
+      renters: undefined,
     };
 
     const ruleResult = noAssetsDeclared(clientWithoutHouse, INITIAL_RISK_SCORE);
@@ -57,10 +48,8 @@ describe('The noAssetsDeclared rule', () => {
     const clientWithoutIncome = { ...DUMMY_CLIENT_INFORMATION, income: 0 };
 
     const expectedRiskScore: RiskScore = {
-      auto: 0,
+      ...INITIAL_RISK_SCORE,
       disability: undefined,
-      home: 0,
-      life: 0,
     };
 
     const ruleResult = noAssetsDeclared(

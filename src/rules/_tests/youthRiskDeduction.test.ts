@@ -24,6 +24,7 @@ describe('The youthRiskDeduction rule', () => {
       home: -2,
       life: -2,
       renters: -2,
+      umbrella: -2,
     };
 
     const ruleResult = youthRiskDeduction(CLIENT_UNDER_30, INITIAL_RISK_SCORE);
@@ -40,6 +41,7 @@ describe('The youthRiskDeduction rule', () => {
       home: -1,
       life: -1,
       renters: -1,
+      umbrella: -1,
     };
 
     const ruleResult = youthRiskDeduction(clientWIthAge35, INITIAL_RISK_SCORE);
