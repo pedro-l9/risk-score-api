@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "prepare": "tsc",
+    "build": "docker build . -t origin-take-home",
     "start": "docker run -p 3000:8080 origin-take-home",
     "start:dev": "tsnd --inspect=8181 --respawn --transpile-only src/index.ts",
     "test": "jest --watchAll --coverage --runInBand",
     "test:list": "jest --verbose --silent --runInBand",
-    "build": "docker build . -t origin-take-home",
     "lint": "eslint --fix .",
     "format": "prettier --write ."
   },

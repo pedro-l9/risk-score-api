@@ -36,11 +36,11 @@ $ docker run -p PORT:8080 -d risk-score-api
     "income": 0,
     "marital_status": "married",
     "risk_questions": [0, 1, 0],
-    "vehicle": { "year": 2018 }
+    "vehicle": { "year": 2021 }
   }
   ```
 
-  details on the payload structure can be found on [this repo](https://github.com/OriginFinancial/origin-backend-take-home-assignment)
+  details on the payload structure can be found on [this repo](https://github.com/OriginFinancial/origin-backend-take-home-assignment/tree/8dd9db83851222a80da06ee023607a0af0b63465/tree/8dd9db83851222a80da06ee023607a0af0b63465)
 
 - **Expected response**:
 
@@ -49,11 +49,13 @@ $ docker run -p PORT:8080 -d risk-score-api
     "auto": "regular",
     "disability": "ineligible",
     "home": "economic",
-    "life": "regular"
+    "life": "regular",
+    "renters": "ineligible",
+    "umbrella": "economic"
   }
   ```
 
-  details on the response structure can be found on [this repo](https://github.com/OriginFinancial/origin-backend-take-home-assignment)
+  details on the response structure can be found on [this repo](https://github.com/OriginFinancial/origin-backend-take-home-assignment/tree/8dd9db83851222a80da06ee023607a0af0b63465)
 
 ## **Running the API for local testing and development:**
 
