@@ -14,7 +14,7 @@ const CLIENT_WITH_NEW_VEHICLE: ClientInformation = {
   income: 2000,
   marital_status: MaritalStatus.MARRIED,
   risk_questions: [0, 0, 0],
-  vehicle: { year: 2017 },
+  vehicle: { year: new Date().getFullYear() - 3 },
 };
 describe('The newVehicleRisk rule', () => {
   it('Should add 1 risk point to the auto score when the client has a vehicle that was produced within the last 5 years', () => {
