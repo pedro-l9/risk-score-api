@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express, { ErrorRequestHandler } from 'express';
 
 import { riskController } from './controllers';
@@ -8,6 +9,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.post('/api/risk', errorWrapper(riskController.getRiskProfile));
 
